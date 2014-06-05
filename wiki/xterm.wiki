@@ -1,0 +1,142 @@
+==xterm设置==
+Xresource文件内容
+
+!!$HOME/.Xdefaults
+Vim.font: -misc-fixed-medium-r-normal--14-*
+Vim*fontSet: -misc-fixed-medium-r-normal--14-*
+Vim*fontList: -misc-fixed-medium-r-normal--14-*
+!Xcursor.theme:default
+!Xcursor.size:  22
+!
+!Tilda.keysym.Super_L: \030@s
+!Tilda.keysym.Super_R: \030@s
+!Xft.dpi: 96
+!Xft.rgba: none
+!Xft.font: WenQuanYi Micro Hei Mono
+!Xft.antialias: true
+!Xft.hinting: true
+!!Xft.hintstyle: hintfull
+!Xft.hintstyle:  hintslight
+!Xft.lcdfilter: lcddefault
+!Xft.rgba: rgb
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias:1
+Xft.rgba: rgb
+
+
+
+
+!颜色
+xterm*color0: black
+xterm*color1: red3
+XTerm*color2: green3
+XTerm*color3: yellow3
+XTerm*color4: DodgerBlue1
+XTerm*color5: magenta3
+XTerm*color6: cyan3
+XTerm*color7: gray90
+XTerm*color8: gray50
+XTerm*color9: red
+XTerm*color10: green
+XTerm*color11: yellow
+XTerm*color12: blue
+XTerm*color13: magenta
+XTerm*color14: cyan
+XTerm*color15: white
+XTerm*colorUL: yellow
+XTerm*colorBD: white
+xterm*background:    black
+xterm*foreground:    Grey
+
+XTerm*locale: true
+xterm.utf8:     true
+xterm*utf8Title: true
+xterm*fontMenu*fontdefault*Label: Default
+xterm*boldFont: DejaVu Sans Mono:style=Bold:size=13
+xterm*xftAntialias: true
+xterm*cjkWidth: false
+xterm*faceName: DejaVu Sans Mono:size=13:style=Medium:charwidth=9
+!xterm*faceNameDoublesize: WenQuanYi Micro Hei Mono:size=15
+xterm*faceNameDoublesize: Microsoft\ YaHei:size=15
+!WenQuanYi Micro Hei Mono:size=15 
+!Microsoft\ YaHei
+
+!look and feel
+xterm.termName: xterm-256color
+!xterm.geometry: 80x24
+xterm*scrollBar: false
+!xterm*rightScrollBar: true
+!xterm*scrollTtyKeypress:  true
+!xterm*scrollTtyOutput:    false
+!xterm*scrollBar:          true
+!xterm*jumpScroll:         true
+xterm*multiScroll:        true
+xterm*loginshell: true
+xterm*dynamicColors:      true
+xterm*cursorBlink: true
+!xterm.borderLess: false
+XTerm*preeditType:Root
+!! 设置Alt为Meta键，在emacs里面的习惯设置。
+!fix alt key input修正alt键无法之用的问题
+xterm*eightBitInput: false
+xterm*altSendsEscape: true
+XTerm*metaSendsEscape: true
+!！缓存容量
+XTerm*saveLines: 4096
+
+!mouse selecting to copy, ctrl-v to paste
+!Ctrl p to print screen content to file
+XTerm*VT100.Translations: #override \
+        Ctrl <KeyPress> H: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+        <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+        <BtnUp>: select-end(PRIMARY,CUT_BUFFER0) \n\
+        Ctrl <KeyPress> @: print() \n
+
+
+
+
+
+URxvt.preeditType:Root
+URxvt.inputMethod:fictx
+!!颜色设置
+URxvt.depth:32
+URxvt.background: [90]#000000
+URxvt.foreground:  #ffffff
+URxvt.colorBD:Gray95
+URxvt.colorUL:Green
+URxvt.color1:Red2
+URxvt.color4:RoyalBlue
+URxvt.color5:Magenta2
+URxvt.color8:Gray50
+URxvt.color10:Green2
+URxvt.color12:DodgerBlue
+URxvt.color14:Cyan2
+URxvt.color15:Gray95
+!!URL操作
+URxvt.urlLauncher:chromium
+URxvt.matcher.button:1
+Urxvt.perl-ext-common:matcher
+!!滚动条设置
+URxvt.scrollBar:True
+URxvt.scrollBar_right:True
+URxvt.scrollBar_floating:False
+URxvt.scrollstyle:plain
+!!滚屏设置
+URxvt.mouseWheelScrollPage:True
+URxvt.scrollTtyOutput: False
+URxvt.scrollWithBuffer: True
+URxvt.scrollTtyKeypress: True
+!!光标闪烁
+URxvt.cursorBlink:True
+URxvt.saveLines:3000
+!!边框
+URxvt.borderLess:      False
+!!字体设置
+Xft.dpi:96
+!URxvt.font:xft:Droid\ Sans\ Mono:size=13:style=Regular:antialias=False:charwidth=12,xft:文泉驿等宽正黑:size=16:style=Regular:antialias=False:charwidth=10
+URxvt.boldfont:xft:Droid Sans Mono:size=14:style=BOld:antialias=False,xft:文泉驿等宽正黑:size=12:style=Bold:antialias=False
+URxvt*font:                           xft:Dejavu\ Sans\ Mono:size=14:style=Medium:charwidth=10,xft:WenQuanYi\ Micro\ Hei\ Mono:size=14:style=Bold:style=Regular:antialias=false
+URxvt.letterSpace:-1

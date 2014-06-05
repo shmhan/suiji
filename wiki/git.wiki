@@ -1,0 +1,14 @@
+github的ssh登录需要修改git目录下的config文件如下：
+[remote "origin"]
+	url = https://github.com/shmhan/suiji.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+修改后如下：
+[remote "origin"]
+	url = git@github.com:shmhan/suiji.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master

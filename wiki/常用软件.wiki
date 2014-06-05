@@ -1,0 +1,5 @@
+
+ *  *pdf阅读器*  zathura
+     
+ *  *终端*  tmux 
+    配置文件在.tmux.conf 

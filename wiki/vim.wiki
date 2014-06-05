@@ -1,0 +1,3 @@
+==小贴士==
+# <esc> = alt
+# :mkvimrc! .xxxx

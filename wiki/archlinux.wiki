@@ -1,0 +1,56 @@
+==grub2引导achiso==
+set root=(hdx,msdosy)
+set isofile=(hdx,msdosy)/然后一路Tab
+loopback loop (hdX,Y)/$isofile
+linux (loop)/arch/boot/x86_64/vmlinuz archisolabel=ARCH_201207 img_dev=/dev/sdXY img_loop=/$isofile earlymodules=loop
+initrd (loop)/arch/boot/x86_64/archiso.img
+ * img_loop=/$isofile earlymodules=loop不知道能不能取消，img_dev=/dev/sdXY这里的xy与前面(hdx,msdosy)不同，这里hda的多。
+==引导后安装==
+ * # pacstrap -i /mnt base
+ * # genfstab -U -p /mnt >> /mnt/etc/fstab
+ * # nano /mnt/etc/fstab
+ * # arch-chroot /mnt /bin/bash
+ * # --- Local
+ * # 时区
+ * # echo <主机名> > /etc/hostname
+    - #
+    - # /etc/hosts: static lookup table for host names
+    - #
+    - #<ip-address>    <hostname.domain.org>    <hostname>
+    - 127.0.0.1    localhost.localdomain    localhost    <主机名>
+    - ::1        localhost.localdomain    localhost
+    - # End of file}}}
+
+==
+==
+==
+
+=设置locales=
+
+键盘：
+localectl status 显示键盘及字体状态
+localectl set-keymap 设置控制台键盘
+localectl X11-set-keymap 设置Xorg的键盘设置
+localectl的键盘布局：常见的键盘为qwerty布局。
+setxkbmap -layout us 也可以设置X键盘
+less /usr/share/X11/xkb/rules/base.lst 
+显示所有键盘布局，中文一般使用US布局。 
+loadkeys layout 更改键盘布局
+setfont Lat2-Terminus16更改终端字体
+
+* 默认语言设置
+* # nano /etc/locale.gen
+   - en_US.UTF-8 UTF-8
+   - de_DE.UTF-8 UTF-8
+ * # locale-gen
+ * # export LANG=de_DE.UTF-8
+
+=autologin=
+
+/etc/systemd/system/getty@tty1.service.d/autologin.conf
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin ming --noclear %I 38400 linux
+
+=pacman和yaourt=
+=

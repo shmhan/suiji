@@ -1,0 +1,17 @@
+=wiki首页=
+%toc
+# [[archlinux]]
+# [[hosts]]
+# [[vim]]
+  # [[wiki]]
+# [[zsh]]
+# [[git]]
+# [[xterm]]
+# [[firefox]]
+# [[常用软件]]
+# [[../node/index.html|note]]
+# [[./todo/index|Todo]]
+# 
+ 
+ 
+2014年 05月 27日 星期二 17:23:45 CST
